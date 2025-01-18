@@ -1,6 +1,6 @@
 branch-defaults:
     default:
-        environment: null
+        environment: study-sync-dev
         group_suffix: null
 global:
     application_name: study-sync
@@ -9,7 +9,7 @@ global:
     default_platform: Node.js 20 running on 64bit Amazon Linux 2023
     default_region: ca-central-1
     include_git_submodules: true
-    instance_profile: StudySyncInstanceProfile
+    instance_profile: null
     platform_name: null
     platform_version: null
     profile: null
