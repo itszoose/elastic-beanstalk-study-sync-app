@@ -1,4 +1,3 @@
-
 ### Install Deps
 
 ```sh
@@ -6,7 +5,6 @@ npm install
 ```
 
 ### Start Server
-
 
 ```sh
 DATABASE_URL="postgresql://postgres:password@localhost:5432/study-sync" PORT=4567 npm start
@@ -32,9 +30,9 @@ createdb study-sync -h localhost -U postgres
 
 ## Connect to Postgres Client
 
-sh```
-psql postgresql://postgres:password@localhost:5432/study-sync
-```
+sh``` psql postgresql://postgres:password@localhost:5432/study-sync
+
+````
 
 https://github.com/omenking/aws-bootcamp-cruddur-2023/blob/main/journal/week04.md
 
@@ -52,7 +50,7 @@ psql study-sync < sql/seed.sql -h localhost -U postgres
 
 sh```
 psql postgresql://postgres:password@localhost:5432/study-sync
-```
+````
 
 ```sql
 SELECT * FROM questions;
@@ -75,6 +73,7 @@ pip install awsebcli --upgrade
 ```
 
 ## Manual Install if you don't have to do the virtual enviroment (optional)
+
 ```sh
 git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
 python ./aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py
@@ -86,7 +85,6 @@ echo 'export PATH="/home/gitpod/.ebcli-virtual-env/executables:$PATH"' >> ~/.bas
 ```
 eb init
 ```
-
 
 ## Set Codesource
 
@@ -103,19 +101,22 @@ zip -r app.zip app
 # Unzip Directory
 
 ```sh
- unzip app.zip 
+ unzip app.zip
 ```
 
 ## Make Config Var for Eb Extensions
 
-mkdir .ebextensions
-touch .ebextensions/001_envar.config
+mkdir .ebextensions touch .ebextensions/001_envar.config
 
 ## Create IAM Profile
 
-
 ```sh
 aws iam create-instance-profile --instance-profile-name StudySyncInstanceProfile
+
+aws iam add-role-to-instance-profile \
+    --role-name aws-elasticbeanstalk-ec2-web-teir-role \
+    --instance-profile-name StudySyncInstanceProfile
+
 aws iam add-role-to-instance-profile \
     --role-name AWSElasticBeanstalkWebTierRole  \
     --instance-profile-name StudySyncInstanceProfile
@@ -123,6 +124,5 @@ aws iam add-role-to-instance-profile \
 
 ## Importing into RDS
 
-
-psql mydatabase < sql/schema.sql -h rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres 
-psql mydatabase < sql/seed.sql -h rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres 
+psql mydatabase < sql/schema.sql -h rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres psql mydatabase < sql/seed.sql -h
+rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres
