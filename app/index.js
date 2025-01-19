@@ -138,6 +138,6 @@ app.get("/style.css", function (req, res) {
 app.get("/app.js", function (req, res) {
 	res.sendFile(path.join(__dirname + "/app.js"));
 });
-console.log("process.env.DATABASE_URL: ", process.env.DATABASE_URL);
+
 console.log(`PLANNING TO USE PORT: ${port}`);
 app.listen(port, "0.0.0.0", () => console.log(`Listening on port ${port}!`));
