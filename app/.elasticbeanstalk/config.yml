@@ -1,6 +1,6 @@
 branch-defaults:
     default:
-        environment: study-sync-dev
+        environment: study-sync-prod
         group_suffix: null
 global:
     application_name: study-sync
