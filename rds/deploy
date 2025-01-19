@@ -9,7 +9,7 @@ aws cloudformation deploy \
 --template-file template.yaml \
 --capabilities CAPABILITY_NAMED_IAM \
 --no-execute-changeset \
---parameter-overrides VpcId="vpc-08f0ec02f7471b018" WebServerSGGroupId="sg-075794ee8d69d71af" Subnets="subnet-0e0fd31733061237d,subnet-0377c6b172e2951d4,subnet-0d8058cb02f147a86" \
+--parameter-overrides VpcId="vpc-0b3cc61a9816023d8" WebServerSGGroupId="sg-09bb0d67256c87723" Subnets="subnet-0e64d42cbc27d1872,subnet-050cbe284cf3f1b62,subnet-0f5fd8d33a800e87f" \
 --region ca-central-1 \
 --stack-name $STACK_NAME
 
