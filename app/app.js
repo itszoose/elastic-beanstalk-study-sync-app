@@ -89,7 +89,7 @@ var App = {
 	},
 	view: function () {
 		return m("main", [
-			m("h1", "Study Sync - deployed by ayyoub.io"),
+			m("h1", "Study Sync V2 - deployed by ayyoub.io"),
 			m("article", m("h2", `Question ${Data.answers_total + 1}:`), m(Question), m(".submit", m("button.submit", { onclick: App.submit }, "Submit"))),
 			m(".progress", m(".total", `Total: ${Data.answers_total + 1} / ${Data.questions.list.length}`), m(".score", `Score: ${Data.score} / ${Data.questions.list.length}`)),
 			m(".reset_wrapper", m("button.reset", { onclick: App.reset }, "Reset"))
