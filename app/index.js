@@ -140,4 +140,5 @@ app.get("/app.js", function (req, res) {
 });
 
 console.log(`PLANNING TO USE PORT: ${port}`);
+console.log("process.env.DATABASE_URL: ", process.env.DATABASE_URL);
 app.listen(port, "0.0.0.0", () => console.log(`Listening on port ${port}!`));
