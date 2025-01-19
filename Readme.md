@@ -135,3 +135,5 @@ Make sure it's stored as a plain string, not ssm-secure! but disable public acce
 ```sh
 /study-sync-app/rds/db-url
 ```
+
+**Pro Tip:** If you want to temporarily make your RDS database accessible from the internet, make sure to modify your rds Public access settings.
