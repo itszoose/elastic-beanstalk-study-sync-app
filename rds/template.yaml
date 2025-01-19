@@ -63,8 +63,8 @@ Resources:
         DeletionPolicy: "Delete"
         UpdateReplacePolicy: "Delete"
         Properties:
-            MasterUsername: { { resolve:ssm-secure:/study-sync/rds/username } }
-            MasterUserPassword: { { resolve:ssm-secure:/study-sync/rds/password } }
+            MasterUsername: "{{resolve:ssm:/study-sync-app/rds/username}}"
+            MasterUserPassword: "{{resolve:ssm-secure:/study-sync-app/rds/password}}"
             DBSubnetGroupName: !Ref DBSubnetGroup
             AllocatedStorage: "20"
             AllowMajorVersionUpgrade: true
