@@ -134,5 +134,4 @@ Make sure it's stored as a plain string, not ssm-secure! but disable public acce
 
 ```sh
 /study-sync-app/rds/db-url
-``
 ```
