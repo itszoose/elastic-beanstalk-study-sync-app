@@ -124,5 +124,15 @@ aws iam add-role-to-instance-profile \
 
 ## Importing into RDS
 
-psql mydatabase < sql/schema.sql -h rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres psql mydatabase < sql/seed.sql -h
-rds-basic-rdsinstance-uzdzjcuz1opq.cv1x0r3utzcm.ca-central-1.rds.amazonaws.com -U postgres
+psql mydatabase < sql/schema.sql -h rds-basic-rdsinstance-ycvm8ms7comh.cbgkwwu4ycs1.ca-central-1.rds.amazonaws.com -U ayyoub
+
+psql mydatabase < sql/seed.sql -h rds-basic-rdsinstance-ycvm8ms7comh.cbgkwwu4ycs1.ca-central-1.rds.amazonaws.com -U ayyoub
+
+## Create SSM Parameter Store for to store Database URL
+
+Make sure it's stored as a plain string, not ssm-secure! but disable public access from your RDS to it's only accessible from within your VPC.
+
+```sh
+/study-sync-app/rds/db-url
+``
+```
